@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-geist-sans: "Geist", system-ui, sans-serif;
+  --font-geist-mono: "Geist Mono", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  color: #111111;
+  font-family: var(--font-geist-sans);
+}
+
+/* Thin scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #bbb;
+}
+
+/* Prose inside markdown */
+.prose pre {
+  @apply bg-surface-muted rounded-lg p-4 overflow-x-auto text-sm;
+}
+.prose code:not(pre code) {
+  @apply bg-surface-muted rounded px-1 py-0.5 text-sm font-mono;
+}
+.prose p {
+  @apply leading-relaxed;
+}
+.prose ul {
+  @apply list-disc pl-5 space-y-1;
+}
+.prose ol {
+  @apply list-decimal pl-5 space-y-1;
+}
